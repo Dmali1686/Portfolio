@@ -1,14 +1,7 @@
-import Image from "next/image";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { projects } from "@/lib/data";
+import { ProjectImage } from "@/components/ui/project-image";
 import { ExternalLink, Github } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 export function ProjectsSection() {
@@ -25,13 +18,12 @@ export function ProjectsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project) => (
             <Card key={project.id} className="overflow-hidden group transition-all hover:shadow-lg">
-              <div className="relative h-48 w-full overflow-hidden">
-                <Image
+              <div className="relative h-48 w-full overflow-hidden bg-muted">
+                <ProjectImage
                   src={project.image}
                   alt={project.title}
-                  fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={project.id === 1}
                 />
               </div>
               <CardHeader>

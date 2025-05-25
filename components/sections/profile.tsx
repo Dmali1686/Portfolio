@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { ContactSection } from "./contact";
+import { ContactForm } from "./contact-form";
 
 export function ProfileSection() {
   return (
@@ -56,7 +56,7 @@ export function ProfileSection() {
                   </DialogTrigger>
                   <DialogContent className="max-w-2xl">
                     <DialogTitle className="text-2xl text-center">Contact Form</DialogTitle>
-                    <ContactSection />
+                    <ContactForm />
                   </DialogContent>
                 </Dialog>
                 <Button asChild variant="outline" size="lg" className="gap-2 rounded-full border-white/20 hover:bg-white/10">
