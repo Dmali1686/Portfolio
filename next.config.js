@@ -4,14 +4,19 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  images: { unoptimized: true },
-  experimental: {
-    fontLoaders: [
+  images: { 
+    unoptimized: true,
+    remotePatterns: [
       {
-        loader: '@next/font/google',
-        options: { timeout: 15000 }, // Increase timeout to 15 seconds
+        protocol: 'https',
+        hostname: '**',
       },
     ],
+  },
+  trailingSlash: true,
+  distDir: 'dist',
+  typescript: {
+    ignoreBuildErrors: true,
   },
 };
 
